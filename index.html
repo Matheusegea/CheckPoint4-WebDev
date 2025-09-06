@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro Jogadoras - Futebol Feminino</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/129b440489.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Cadastro de Jogadoras</h1>
+  </header>
+
+  <div class="container">
+
+    <form id="formJogadora">
+      <h2>Cadastrar jogadoras</h2>
+
+      <label for="nomeJogadora">Nome</label>
+      <input type="text" id="nomeJogadora" />
+
+      <label for="posicaoJogadora">Posição</label>
+      <input type="text" id="posicaoJogadora" placeholder="adicione a posição aqui"/>
+
+      <label for="clubeJogadora">Clube</label>
+      <input type="text" id="clubeJogadora" placeholder="adicione o clube aqui"/>
+
+      <label for="fotoJogadora">Foto</label>
+      <input type="text" id="fotoJogadora" placeholder="coloque a foto aqui" />
+
+      <div class="row">
+        <div class="col">
+          <label for="golsJogadora">Gols</label>
+          <input type="number" id="golsJogadora" min="0" />
+        </div>
+        <div class="col">
+          <label for="assistenciasJogadora">Assistências</label>
+          <input type="number" id="assistenciasJogadora" min="0" />
+        </div>
+        <div class="col">
+          <label for="jogosJogadora">Jogos</label>
+          <input type="number" id="jogosJogadora" min="0" />
+        </div>
+      </div>
+
+      <input type="hidden" id="indiceJogadora" value=""/>
+
+      <div class="form-actions">
+        <button type="submit" id="salvarBtn">Cadastrar</button>
+        <button type="button" id="limparBtn">Limpar</button>
+      </div>
+    </form>
+
+    <section class="controls">
+      <input type="text" id="campoBusca" placeholder="Buscar por nome ou posição" />
+      <select id="filtroClube">
+        <option value="Todos">Todos os clubes</option>
+      </select>
+
+      <div class="sortButtons">
+        <button id="ordenarNomeBtn">Ordenar por Nome</button>
+        <div class="dropdown">
+          <button id="ordenarPosicaoBtn">Filtrar por Posição</button>
+          <div id="dropdownPosicoes" class="dropdown-content">
+            <button data-posicao="">Todas</button>
+            <button data-posicao="Goleira">Goleira</button>
+            <button data-posicao="Lateral">Lateral</button>
+            <button data-posicao="Zagueira">Zagueira</button>
+            <button data-posicao="Meio-campo">Meio-campo</button>
+            <button data-posicao="Atacante">Atacante</button>
+          </div>
+        </div>
+        <button id="mostrarFavoritasBtn">Mostrar Favoritas</button>
+      </div>
+    </section>
+
+    <h2>Lista de Jogadoras</h2>
+    <div id="listaJogadoras" class="grid"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
